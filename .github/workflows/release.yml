@@ -16,7 +16,7 @@ jobs:
       - name: Create the product
         run: dotnet publish -p:PublishProfile=Properties/PublishProfiles/FolderProfile.pubxml
       - name: Zip the product
-        run: zip --junk-paths release-artifact buildme/bin/Releases/Publish/*
+        run: zip --junk-paths release-artifact buildme/bin/Release/Publish/*
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
