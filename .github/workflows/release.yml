@@ -16,7 +16,10 @@ jobs:
       - name: Create the product
         run: dotnet publish -p:PublishProfile=Properties/PublishProfiles/FolderProfile.pubxml
       - name: Zip the product
-        run: zip --junk-paths release-artifact buildme/bin/Release/Publish/*
+        uses: TheDoctor0/zip-release@v0.3.0
+        with:
+          filename: release.zip
+          directory: buildme/bin/Release/Publish  
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -35,6 +38,6 @@ jobs:
         with:
           # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./release-artifact.zip
-          asset_name: release-artifact.zip
+          asset_path: release.zip
+          asset_name: buildme.release-${{ github.ref }}.zip
           asset_content_type: application/zip
