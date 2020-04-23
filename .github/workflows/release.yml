@@ -9,15 +9,20 @@ jobs:
     name: Release artifacts
     runs-on: windows-latest
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v1
-        with:
-          name: release-assets
-          path: buildme/bin/Release/Publish
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.101
+    - name: Install dependencies
+      run: dotnet restore
 
-      - name: GH Release
-        uses: softprops/action-gh-release@v0.1.5
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          files: buildme/bin/Release/Publish/*
+    - name: Build
+      run: dotnet publish -p:PublishProfile=Properties/PublishProfiles/FolderProfile.pubxml
+
+    - name: GH Release
+      uses: softprops/action-gh-release@v0.1.5
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        files: buildme/bin/Release/Publish/*
