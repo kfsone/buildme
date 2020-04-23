@@ -1,5 +1,4 @@
-name: .NET Core
-
+name: Continuous Integration
 on:
   push:
     branches: [ master ]
@@ -23,11 +22,3 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
-
-    - name: Publish
-      run: dotnet publish -p:PublishProfile=Properties/PublishProfiles/FolderProfile.pubxml
-    - name: Upload artifact
-      uses: actions/upload-artifact@v1.0.0
-      with:
-        name: published_app
-        path: buildme/bin/Release/Publish
