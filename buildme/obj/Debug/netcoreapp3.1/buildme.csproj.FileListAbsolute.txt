@@ -1,0 +1,14 @@
+C:\Users\oliver\source\repos\buildme\buildme\bin\Debug\netcoreapp3.1\buildme.exe
+C:\Users\oliver\source\repos\buildme\buildme\bin\Debug\netcoreapp3.1\buildme.deps.json
+C:\Users\oliver\source\repos\buildme\buildme\bin\Debug\netcoreapp3.1\buildme.runtimeconfig.json
+C:\Users\oliver\source\repos\buildme\buildme\bin\Debug\netcoreapp3.1\buildme.runtimeconfig.dev.json
+C:\Users\oliver\source\repos\buildme\buildme\bin\Debug\netcoreapp3.1\buildme.dll
+C:\Users\oliver\source\repos\buildme\buildme\bin\Debug\netcoreapp3.1\buildme.pdb
+C:\Users\oliver\source\repos\buildme\buildme\obj\Debug\netcoreapp3.1\buildme.Form1.resources
+C:\Users\oliver\source\repos\buildme\buildme\obj\Debug\netcoreapp3.1\buildme.csproj.GenerateResource.cache
+C:\Users\oliver\source\repos\buildme\buildme\obj\Debug\netcoreapp3.1\buildme.AssemblyInfoInputs.cache
+C:\Users\oliver\source\repos\buildme\buildme\obj\Debug\netcoreapp3.1\buildme.AssemblyInfo.cs
+C:\Users\oliver\source\repos\buildme\buildme\obj\Debug\netcoreapp3.1\buildme.csproj.CoreCompileInputs.cache
+C:\Users\oliver\source\repos\buildme\buildme\obj\Debug\netcoreapp3.1\buildme.dll
+C:\Users\oliver\source\repos\buildme\buildme\obj\Debug\netcoreapp3.1\buildme.pdb
+C:\Users\oliver\source\repos\buildme\buildme\obj\Debug\netcoreapp3.1\buildme.genruntimeconfig.cache
