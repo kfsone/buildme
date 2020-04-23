@@ -12,5 +12,5 @@ jobs:
     name: Release artifacts
     runs-on: windows-latest
     steps:
-      - id: Step 1
+      - name: Step 1
         run: echo Hello
