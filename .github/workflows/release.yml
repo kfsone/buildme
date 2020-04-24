@@ -10,19 +10,26 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Action
-        run: echo Creating release artifacts for ${{ github.ref }}
-
-      - name: Capture version
-        id: capture_version
+      # Extract the tag from the github.ref
+      - name: Identify tag
+        id: release_tag
         run: |
             $fields = "${{ github.ref }}" -Split '/'
-            echo $fields[2]
+            $tag = $fields[-1]
+            echo "::set-output name=tag::$tag"
 
-#      - name: Checkout code
-#        uses: actions/checkout@v2
-#
+      - name: Repeat tag
+        run: |
+            echo "Tag is ${{ steps.release_tag.outputs.tag }}"
+
+      - name: Show the event.json
+        run: |
+            echo gep: $GITHUB_EVENT_PATH
+            echo env:gep: $env:GITHUB_EVENT_PATH
+            echo (get-content $env:GITHUB_EVENT_PATH | convertfrom-json )
 #      - name: Create the product
 #        run: dotnet publish -p:PublishProfile=Properties/PublishProfiles/FolderProfile.pubxml
 #
