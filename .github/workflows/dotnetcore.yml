@@ -2,8 +2,10 @@ name: Continuous Integration
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    paths:
+        buildme/**
+        buildme.sln
+        .github/dotnetcore.yml
 
 jobs:
   build:
