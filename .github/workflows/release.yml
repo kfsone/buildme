@@ -15,11 +15,16 @@ jobs:
         uses: actions/checkout@v2
       - name: Create the product
         run: dotnet publish -p:PublishProfile=Properties/PublishProfiles/FolderProfile.pubxml
-      - name: Zip the product
-        uses: TheDoctor0/zip-release@v0.3.0
-        with:
-          filename: release.zip
-          directory: buildme/bin/Release/Publish  
+      #- name: Zip the product
+      #  uses: TheDoctor0/zip-release@v0.3.0
+      #  with:
+      #    filename: release.zip
+      #    directory: buildme/bin/Release/Publish  
+      - name: Create zip
+        run:  |
+          compress-archive |
+          -Path buildme/bin/Release/Publish/* |
+          -DestinationPath release.zip
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
